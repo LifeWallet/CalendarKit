@@ -23,6 +23,7 @@ open class EventView: UIView {
     view.isUserInteractionEnabled = false
     view.backgroundColor = .clear
     view.isScrollEnabled = false
+    view.contentInset = .zero
     return view
   }()
 
@@ -56,6 +57,7 @@ open class EventView: UIView {
       textView.text = event.text
       textView.textColor = event.textColor
       textView.font = event.font
+      textView.contentInset = .zero        
     }
     descriptor = event
     backgroundColor = event.backgroundColor
