@@ -45,6 +45,8 @@ open class EventView: UIView {
 
     color = tintColor
     addSubview(textView)
+    
+    
   }
 
   func updateWithDescriptor(event: EventDescriptor) {
@@ -85,6 +87,8 @@ open class EventView: UIView {
     context?.addLine(to: CGPoint(x: x, y: (bounds).height))
     context?.strokePath()
     context?.restoreGState()
+    
+    self.layer.cornerRadius = 5
   }
 
   override open func layoutSubviews() {
