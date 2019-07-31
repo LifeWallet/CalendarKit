@@ -1,6 +1,6 @@
 import Foundation
 
-public protocol EventDescriptor {  
+public protocol EventDescriptor {
     var startDate: Date {get set}
     var endDate: Date {get set}
     var isAllDay: Bool {get set}
