@@ -263,10 +263,12 @@ public class TimelineView: UIView {
       let descriptor = attributes.descriptor
       let eventView = eventViews[idx]
       eventView.frame = attributes.frame
+      let calCulatedHeight = attributes.frame.height - style.eventGap
+      let minHeight = (calCulatedHeight < 30) ? 30 : calCulatedHeight
       eventView.frame = CGRect(x: attributes.frame.minX,
                                y: attributes.frame.minY,
                                width: attributes.frame.width - style.eventGap,
-                               height: attributes.frame.height - style.eventGap)
+                               height: minHeight)
       eventView.updateWithDescriptor(event: descriptor)
     }
   }
