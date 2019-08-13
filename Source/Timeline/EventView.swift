@@ -13,17 +13,20 @@ public class EventView: UIView {
   public var descriptor: EventDescriptor?
 
   public var color = UIColor.lightGray
+    
+  public var referenceTextView: UITextView?
 
   var contentHeight: CGFloat {
     return textView.height
   }
 
-  lazy var textView: UITextView = {
+  public lazy var textView: UITextView = {
     let view = UITextView()
     view.isUserInteractionEnabled = false
     view.backgroundColor = .clear
     view.isScrollEnabled = false
     view.contentInset = .zero
+    self.referenceTextView = view
     return view
   }()
 
@@ -50,7 +53,7 @@ public class EventView: UIView {
     
   }
 
-  func updateWithDescriptor(event: EventDescriptor) {
+  public func updateWithDescriptor(event: EventDescriptor) {
     if let attributedText = event.attributedText {
       textView.attributedText = attributedText
     } else {
