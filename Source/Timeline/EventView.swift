@@ -7,7 +7,7 @@ public protocol EventViewDelegate: AnyObject {
   func eventViewDidLongPress(_ eventview: EventView)
 }
 
-open class EventView: UIView {
+public class EventView: UIView {
 
   weak var delegate: EventViewDelegate?
   public var descriptor: EventDescriptor?
